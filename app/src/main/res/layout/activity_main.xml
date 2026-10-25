@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#000000">
+
+    <androidx.media3.ui.PlayerView android:id="@+id/playerView"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:focusable="false" app:use_controller="false" />
+
+    <LinearLayout android:id="@+id/listPanel"
+        android:layout_width="360dp" android:layout_height="match_parent"
+        android:orientation="vertical" android:background="#BF000000">
+        <TextView android:id="@+id/gname"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:padding="16dp" android:textColor="#FFFFFF" android:textSize="20sp"
+            android:background="#20FFFFFF" />
+        <androidx.recyclerview.widget.RecyclerView android:id="@+id/rv"
+            android:layout_width="match_parent" android:layout_height="0dp"
+            android:layout_weight="1" android:focusable="false" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:padding="10dp" android:textColor="#99FFFFFF" android:textSize="12sp"
+            android:text="◀ ▶ Grup · ▲ ▼ Kanal · OK Oynat · Kırmızı/Menü: Ayarlar" />
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/settingsPanel"
+        android:layout_width="600dp" android:layout_height="wrap_content"
+        android:layout_gravity="center" android:orientation="vertical"
+        android:padding="24dp" android:background="#222222" android:visibility="gone">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Playlist Ayarları" android:textColor="#FFFFFF" android:textSize="22sp" />
+        <EditText android:id="@+id/urlInput"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:hint="M3U adresi (http://...)" android:inputType="textUri"
+            android:singleLine="true" android:imeOptions="actionDone"
+            android:textColor="#FFFFFF" android:textColorHint="#888888" />
+        <Button android:id="@+id/saveBtn" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:text="Yükle" />
+        <Button android:id="@+id/cancelBtn" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:text="İptal" />
+    </LinearLayout>
+</FrameLayout>
